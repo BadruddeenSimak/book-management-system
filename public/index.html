@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Book Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>📚 Online Book Management System</h1>
+        <p>Manage your library collection easily</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <div class="stat-card">
+                <h3>Total Books</h3>
+                <p id="totalBooks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Quantity</h3>
+                <p id="totalQuantity">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Categories</h3>
+                <p id="totalCategories">0</p>
+            </div>
+
+        </section>
+
+        <!-- Add Book Form -->
+        <section class="card">
+
+            <h2 id="formTitle">Add New Book</h2>
+
+            <form id="bookForm">
+
+                <input type="hidden" id="bookId">
+
+                <div class="form-group">
+                    <label for="title">Book Title</label>
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Enter book title"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Author Name</label>
+                    <input
+                        type="text"
+                        id="author"
+                        placeholder="Enter author name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input
+                        type="text"
+                        id="category"
+                        placeholder="Enter category"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        min="0"
+                        placeholder="Enter quantity"
+                        required
+                    >
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="submitBtn">
+                        Add Book
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="cancel-btn"
+                        hidden
+                    >
+                        Cancel
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- Book List -->
+        <section class="card">
+
+            <div class="book-heading">
+                <h2>Book Collection</h2>
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search by title or author..."
+                >
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Book Title</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookList">
+                        <tr>
+                            <td colspan="7">Loading books...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Online Book Management System | Developed using Node.js and Express.js</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
